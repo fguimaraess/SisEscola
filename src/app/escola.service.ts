@@ -65,6 +65,7 @@ export class EscolaService {
       // TODO: send the error to remote logging infrastructure
       console.error(error); // log to console instead
       // TODO: better job of transforming error for user consumption
+      alert(`${operation} failed: ${error.message}`);
       console.log(`${operation} failed: ${error.message}`);
       // Let the app keep running by returning an empty result.
       return of(result as T);
