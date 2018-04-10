@@ -1,0 +1,14 @@
+<div *ngIf="turma">
+    
+      <h2>Editar {{ turma.Nome | uppercase }}</h2>
+      <div><span>ID: </span>{{turma.ID}}</div>
+      <div>
+        <label>Nome:
+          <input [(ngModel)]="turma.Nome" placeholder="Nome">
+        </label>
+        <label>Endereço:
+            <input [(ngModel)]="turma.IDEscola" placeholder="Endereco">
+        </label>
+        <button class="btn btn-success" (click)="save()">Salvar</button>
+      </div>
+</div>

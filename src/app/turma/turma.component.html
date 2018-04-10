@@ -1,0 +1,23 @@
+<h2>Turmas</h2>
+<button class="btn btn-default" (click)="onAdd()">Adicionar</button>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Ações</th>
+      <th>Nome</th>
+      <th>Escola</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let t of turma">
+    <tr *ngFor="let e of escola">
+      <td>
+          <a (click)="onSelect(t)"><i class="fa fa-pencil fa-2"></i></a>
+          <a (click)="delete(t)"><i class="fa fa-minus-circle fa-2"></i></a>
+      </td>
+      <td>{{ t.Nome }}</td>
+      <td *ngIf="t.IDEscola == e.ID">{{ e.Nome }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<app-turma-detail [turma]="selectedTurma"></app-turma-detail>

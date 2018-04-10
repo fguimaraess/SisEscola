@@ -1,20 +1,24 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container">
+  <div id="div-principal">
+    <div id="cor-div-principal">
+      <img class="img-responsive left-block" alt="SisEscola" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQfSURBVGhD7dlpyBVVHMfxp4zSiKJC1BYoCtIXiggiBRrUK2kPoyIRg0KEBMEFgyiUVIooMIxooYhoI9vfVISCBuVWRFFUYmEbQRAttC/frzTx9zxn7p07d547T+YPPi+ee8+dO3fmzDn/c56hQ/mf5Ejcj6+xExtwNU7DfyZj8Cz+KvElnsEynINxGJW5B7kfUOZXvIG7cAVORetZhdzJ9uozPIWlmIWjMLBcgz+RO7F+/YzXcQcuw0kYkVyMX5A7iZHyKR5AYwOIt/5H5L5sEHah75wJh9j04N/gMTwNR6n0/SbZE/rKeHyE9MD7cDJizsJ1eAR2ifQz/XCOqp3j8BbSg9rFpqNb7NcLYB//EOlxqnoNTr614gc9QO7Am1Ank3AlNuJdVBn93oEXtFYOw6PIHbiwA7fhAhyLOpmA3B0v2H1PQe2sR+7AZX6Ho8qduAQnoko8ydwgIrvvTNTOCuQO3Is/YJe4G5YjXvk0R8M2uc97YZyzamckZ+33cS8W/+NN5NrJ9800vIKXcIYvVMl5GPSsnWO3LmJ3LV73x3TNVHyLeMA2PA+XB8Y7EN97FR3jrP0F4ofaYInvc1PkKsT316I0ZbP2oHkOnkvMDYht5iMbf71XITZug/WavSKNFUFstxLDYj+0P8aGbXBwcZDJZTZi22EPu7P2w4iN2uAw73CfS663DHvYb0Fs0BaXy7l4oV0axLZOkOfj30yGmwCxURushstyE9L2rukPyJNIGw1ap5L8cqSVhftmB+QEtH03OpXkrm/SpfQWDPvR6QSjD+AVcghM32tap5LcotL3Y/uPkc4t+/MgYsM1KOJwfDZ8zXVG04VjpxWle1npCGW5ZNmUjVe/aOj+0TEoy0QsxBPo9251K8nTBZztL0JpvkPR2NtWNUdgDtZhN3q9W0VJnktux9L1UMf8hKLx275QM+7+uVPiFlC3ijmW5Gm8Sy7AYnsn6q7Zg+IDX/lCA/FunYvbka727JZObrnY/79HbO9WaaWdkhcRPzgFTcdRyWLvUpT9CEeiTxDPxT2w7AiVy7WIH7YMGHS84tsQz+MHlI5QuViIfY54ENfQtfeMauQhxO934Ki1yeCORjyQHARehguZ0zFSWY70u29E7dyK9IDRe/Dhdcj1YW4iF8L5IX6P80fZc1Q5Xp3fEA+c42T4OFw3WKvVSW5jw5m8sf8pWjJ4VarO3F7RrXASq/pw5vYErKncA2481ll2I/dx7VbxSzvZCzej52Is0jhCbUb8jDXXDAwkPvBL4ABgTRZPpIwn+AIWoahw70Ns4wg1D63EwtLFjiu6Xv4jlftfyM0YFTkc7o6vhluZvRSPncqV1mPxeD2eQ7qyi7Yj7iCO6viw+9D78Mc6yhqqr3/UtB2HZ5+t4/f/dSgHbYaG/gYzvSt2VlTHZQAAAABJRU5ErkJggg==">
+      <h2>
+        Bem vindo ao {{ title }}
+      </h2>
+    </div> 
+  </div>
+  
+  <div id="menu">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Menu</div>
+        <div class="panel-body">
+          <button class="btn btn-default">Escolas</button>
+          <button class="btn btn-default">Turmas</button>
+        </div>
+    </div>
+  </div>
 
+  <app-escola></app-escola>
+  <app-turma></app-turma>
+</div>
