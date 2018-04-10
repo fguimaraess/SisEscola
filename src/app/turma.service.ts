@@ -22,6 +22,14 @@ export class TurmaService {
       );
   }
 
+  listarByID(id: number): Observable<Turma>{
+    const url = `${this.turmaUrl}/${id}`;
+      return this.http.get<Turma>(url).pipe(
+        tap(_ => console.log(`ID Escola = ${id}`),
+        catchError(this.handleError('Buscar Turmas')))
+      );
+  }
+
   addTurma(turma: Turma): Observable<Turma>{
     return this.http.post<Turma>(this.turmaUrl, turma, httpOptions)
     .pipe(

@@ -11,7 +11,7 @@
   <tbody *ngFor="let t of turma">
     <tr>
       <td>
-          <a (click)="onSelect(t)"><i class="fa fa-pencil fa-2"></i></a>
+          <a routerLink="/turma/{{t.ID}}"><i class="fa fa-pencil fa-2"></i></a>
           <a (click)="delete(t)"><i class="fa fa-minus-circle fa-2"></i></a>
       </td>
       <td>{{ t.Nome }}</td>
@@ -20,4 +20,3 @@
   </tbody>
 </table>
 
-<app-turma-detail [turma]="selectedTurma"></app-turma-detail>

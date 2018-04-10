@@ -12,7 +12,7 @@
   <tbody *ngFor="let e of escolas">
     <tr>
       <td>
-          <a routerLink="/detalhe/{{e.ID}}"><i class="fa fa-pencil fa-2"></i></a>
+          <a routerLink="/escola/{{e.ID}}"><i class="fa fa-pencil fa-2"></i></a>
           <a (click)="delete(e)"><i class="fa fa-minus-circle fa-2"></i></a>
       </td>
       <td>{{ e.Nome }}</td>

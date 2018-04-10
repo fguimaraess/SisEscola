@@ -1,3 +1,4 @@
+import { TurmaDetailComponent } from './turma-detail/turma-detail.component';
 import { EscolaDetailComponent } from './escola-detail/escola-detail.component';
 import { HomeComponent } from './home/home.component';
 import { TurmaComponent } from './turma/turma.component';
@@ -11,8 +12,9 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'escola', component: EscolaComponent },
-  { path: 'detalhe/:id', component: EscolaDetailComponent },
-  { path: 'turma', component: TurmaComponent }
+  { path: 'escola/:id', component: EscolaDetailComponent },
+  { path: 'turma', component: TurmaComponent },
+  { path: 'turma/:id', component: TurmaDetailComponent }
 ]
 
 @NgModule({
