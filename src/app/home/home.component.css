@@ -1,0 +1,14 @@
+#intro {
+    background-color: #ddd;
+    height: 200px;
+}
+
+#saudacao{
+    font-size: 14pt;
+    font-family: Verdana;
+}
+
+#descricao {
+    font-size: 12pt;
+    font-family: Verdana;
+}

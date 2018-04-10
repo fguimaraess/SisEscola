@@ -1,3 +1,4 @@
+import { EscolaService } from './../escola.service';
 import { TurmaService } from './../turma.service';
 import { Turma } from '../turma';
 import { Component, OnInit, Input } from '@angular/core';
@@ -11,7 +12,7 @@ export class TurmaDetailComponent implements OnInit {
 
   @Input() turma: Turma;
 
-  constructor(private turmaService: TurmaService) { }
+  constructor(private turmaService: TurmaService, private escolaService: EscolaService) { }
 
   ngOnInit() {
   }

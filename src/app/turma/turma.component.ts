@@ -2,17 +2,20 @@ import { EscolaService } from './../escola.service';
 import { TurmaService } from './../turma.service';
 import { Component, OnInit } from '@angular/core';
 import { Turma } from '../turma';
+import{ Escola } from '../escola';
+
 @Component({
   selector: 'app-turma',
   templateUrl: './turma.component.html',
   styleUrls: ['./turma.component.css']
 })
 export class TurmaComponent implements OnInit {
-  turma: Array<any>;
-  escola: Array<any>;
+  turma: Array<Turma>;
+  escola: Array<Escola>;
   selectedTurma: Turma;
+  nomeDaEscola;
 
-  constructor(private turmaService: TurmaService, private escolaService: EscolaService) { }
+    constructor(private turmaService: TurmaService, private escolaService: EscolaService) { }
 
   ngOnInit() {
     this.listar();

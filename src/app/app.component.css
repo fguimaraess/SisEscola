@@ -1,20 +1,23 @@
 #div-principal {
     font-family: Verdana;
-    /*padding-top: 10%;*/
-    text-align:center;
+    text-align:left;
+}
+
+#titulo{
+    font-size: 25pt;
 }
 
 #cor-div-principal {
     background-color: lightsteelblue;
-    padding: 4%;
+    padding: 1%;
 }
 
 #menu{
-    margin-top: 4%;
+    margin-top: 1%;
     background-color: lightsteelblue;
     text-align:center;
 }
-.panel-primary>.panel-heading{
+.panel-primary>.panel-heading, .panel-body{
     background-color: lightsteelblue;
     border-color: transparent;
     font-size: 14pt;
@@ -24,13 +27,18 @@
 }
 
 .panel-primary {
-    border-color: black;
-    height: 160px;
+    border-color: transparent;
+    height: 100px;
 }
 
 .btn-default{
-    margin-top: 2%;
+    margin-top: 0%;
     color: black;
-    background-color: lightsteelblue;
+    background-color: white;
     border-color: lightsteelblue;
+}
+
+.btn-default:hover{
+    background-color: grey;
+    color: white;
 }

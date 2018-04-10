@@ -9,13 +9,13 @@
     </tr>
   </thead>
   <tbody *ngFor="let t of turma">
-    <tr *ngFor="let e of escola">
+    <tr>
       <td>
           <a (click)="onSelect(t)"><i class="fa fa-pencil fa-2"></i></a>
           <a (click)="delete(t)"><i class="fa fa-minus-circle fa-2"></i></a>
       </td>
       <td>{{ t.Nome }}</td>
-      <td *ngIf="t.IDEscola == e.ID">{{ e.Nome }}</td>
+      <td>{{ t.Escola.Nome }}</td>
     </tr>
   </tbody>
 </table>

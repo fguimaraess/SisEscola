@@ -8,7 +8,7 @@ import { Escola } from '../escola';
   styleUrls: ['./escola.component.css']
 })
 export class EscolaComponent implements OnInit {
-  escola: Array<any>;
+  escolas: Array<Escola>;
   selectedEscola: Escola;
 
   constructor(private escolaService: EscolaService) { }
@@ -21,13 +21,13 @@ export class EscolaComponent implements OnInit {
     this.selectedEscola = _escola;
   }
 
-  listar(){
-    this.escolaService.listar().subscribe(dados => this.escola = dados);
+  listar(): void{
+    this.escolaService.listar().subscribe(dados => this.escolas = dados);
     
   }
 
   delete(escola: Escola): void{
-    this.escola = this.escola.filter(x => x !== escola);
+    this.escolas = this.escolas.filter(x => x !== escola);
     this.escolaService.deleteEscola(escola).subscribe();
   }
 
