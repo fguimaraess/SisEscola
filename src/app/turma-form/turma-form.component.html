@@ -4,7 +4,8 @@
 
     <div class="form-group">
       <label for="escola">Escola</label>
-      <select class="form-control" name="idescola" id="idescola" required [(ngModel)]="model.idescola" #idescola="ngModel" (change)="getNumeroDeTurmas($event.target.value)">
+      <select class="form-control" name="idescola" id="idescola" required [(ngModel)]="model.idescola"
+      #idescola="ngModel" (change)="getNumeroDeTurmas($event.target.value)">
         <option *ngFor="let escola of escolas" [value]="escola.ID">{{ escola.Nome }}</option>
       </select>
       <div [hidden]="idescola.valid || idescola.pristine" class="alert alert-danger">
@@ -12,9 +13,11 @@
       </div>
     </div>
 
-    <div class="form-group">
-      <label>Quantidade de Turmas</label>
-      <input type="text" disabled value="{{ qtdTurmas }}" class="form-control">
+    <div [hidden]="qtdTurmas == undefined">
+      <div class="form-group">
+        <label>Quantidade de Turmas</label>
+        <input type="text" disabled value="{{ qtdTurmas }}" class="form-control">
+      </div>
     </div>
 
     <div class="form-group">
