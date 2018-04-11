@@ -71,5 +71,4 @@ export class EscolaService {
       return of(result as T);
     };
   }
-
 }
