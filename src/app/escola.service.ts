@@ -18,7 +18,7 @@ export class EscolaService {
     listar(): Observable<Escola[]>{
       return this.http.get<Escola[]>(`${this.escolaUrl}`)
         .pipe(
-          tap(escola => console.log(`Escolas`)),
+          tap(escola => console.log(`Escolas listadas com sucesso!`)),
           catchError(this.handleError('Buscar Escolas', []))
         );
     }
@@ -35,7 +35,7 @@ export class EscolaService {
     addEscola(escola: Escola): Observable<Escola> {
       return this.http.post<Escola>(this.escolaUrl, escola, httpOptions)
         .pipe(
-          tap((escola: Escola) => alert(`Escola adicionada.`)),
+          tap((escola: Escola) => swal("", `Escola adicionada.`, "success")),
           catchError(this.handleError<Escola>('Adicionar Escola'))
         );
     }
@@ -44,7 +44,7 @@ export class EscolaService {
       const url = `${this.escolaUrl}/?id=${escola.ID}`;
       return this.http.put(url, escola, httpOptions)
         .pipe(
-          tap(_ => alert(`Escola atualizada.`)),
+          tap(_ => swal("", `Escola atualizada.`, "success")),
           catchError(this.handleError<any>('Atualizar Escola'))
         );
     }
@@ -55,7 +55,7 @@ export class EscolaService {
 
       return this.http.delete<Escola>(url,httpOptions)
         .pipe(
-          tap(_ => alert(`Escola excluída.`)),
+          tap(_ => swal("", `Escola excluída.`, "success")),
           catchError(this.handleError<Escola>('Excluir Escola'))
       );
     }
@@ -65,7 +65,7 @@ export class EscolaService {
       // TODO: send the error to remote logging infrastructure
       console.error(error); // log to console instead
       // TODO: better job of transforming error for user consumption
-      alert(`${operation} failed: ${error.message}`);
+      swal("", `${operation} failed: ${error.message}`, "error");
       console.log(`${operation} failed: ${error.message}`);
       // Let the app keep running by returning an empty result.
       return of(result as T);

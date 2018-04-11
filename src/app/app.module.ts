@@ -13,6 +13,8 @@ import { EscolaDetailComponent } from './escola-detail/escola-detail.component';
 import { TurmaDetailComponent } from './turma-detail/turma-detail.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { HomeComponent } from './home/home.component';
+import { EscolaFormComponent } from './escola-form/escola-form.component';
+import { TurmaFormComponent } from './turma-form/turma-form.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { HomeComponent } from './home/home.component';
     EscolaDetailComponent,
     TurmaDetailComponent,
     HomeComponent,
+    EscolaFormComponent,
+    TurmaFormComponent,
   ],
   imports: [
     BrowserModule,
