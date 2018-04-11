@@ -1,24 +1,27 @@
 <div *ngIf="escola">
-      <h2>Editar {{ escola.Nome | uppercase }}</h2>
-      <div><span>ID: </span>{{escola.ID}}</div>
-      <div class="row">
-        <div class="col-sm-12">
-          <label>Nome:
-            <input [(ngModel)]="escola.Nome" placeholder="Nome" class="form-control">
-          </label>
-        </div>
+  <h2>Editar {{ escola.Nome | uppercase }}</h2>
+  <div>
+    <span>ID: </span>{{escola.ID}}</div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="form-group">
+        <label>Nome</label>
+        <input [(ngModel)]="escola.Nome" placeholder="Nome" class="form-control">
       </div>
-      <div class="row">
-        <div class="col-sm-12">
-          <label>Endereço:
-              <input [(ngModel)]="escola.Endereco" placeholder="Endereco" class="form-control">
-          </label>
-        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="form-group">
+        <label>Endereço:</label>
+        <input [(ngModel)]="escola.Endereco" placeholder="Endereco" class="form-control">
       </div>
-      <div class="row">
-        <div class="col-sm-12">
-          <button class="btn btn-success" (click)="save()">Salvar</button>
-          <button class="btn btn-default" (click)="goBack()">Voltar</button>
-        </div>
-      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <button class="btn btn-success" (click)="save()">Salvar</button>
+      <button class="btn btn-default" (click)="goBack()">Voltar</button>
+    </div>
+  </div>
 </div>

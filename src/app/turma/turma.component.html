@@ -1,5 +1,5 @@
 <h2>Turmas</h2>
-<button class="btn btn-default" (click)="onAdd()">Adicionar</button>
+<a class="btn btn-default" routerLink="/add-turma">Adicionar</a>
 <table class="table table-hover">
   <thead>
     <tr>
@@ -11,12 +11,15 @@
   <tbody *ngFor="let t of turma">
     <tr>
       <td>
-          <a routerLink="/turma/{{t.ID}}"><i class="fa fa-pencil fa-2"></i></a>
-          <a (click)="delete(t)"><i class="fa fa-minus-circle fa-2"></i></a>
+        <a routerLink="/turma/{{t.ID}}">
+          <i class="fa fa-pencil fa-2x"></i>
+        </a>
+        <a (click)="delete(t)" style="cursor: pointer;">
+          <i class="fa fa-minus-circle fa-2x"></i>
+        </a>
       </td>
       <td>{{ t.Nome }}</td>
       <td>{{ t.Escola.Nome }}</td>
     </tr>
   </tbody>
 </table>
-

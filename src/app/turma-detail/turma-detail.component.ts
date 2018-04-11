@@ -1,6 +1,7 @@
 import { EscolaService } from './../escola.service';
 import { TurmaService } from './../turma.service';
 import { Turma } from '../turma';
+import { Escola } from '../escola';
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -11,7 +12,8 @@ import { Location } from '@angular/common';
   styleUrls: ['./turma-detail.component.css']
 })
 export class TurmaDetailComponent implements OnInit {
-
+  
+  escolas: Array<Escola>;
   @Input() turma: Turma;
 
   constructor(
@@ -23,6 +25,7 @@ export class TurmaDetailComponent implements OnInit {
 
   ngOnInit() {
     this.getTurma();
+    this.getEscolas();
   }
 
   save(): void{
@@ -32,6 +35,10 @@ export class TurmaDetailComponent implements OnInit {
   getTurma():void{
     const id = +this.route.snapshot.paramMap.get('id');
     this.turmaService.listarByID(id).subscribe(turma => this.turma = turma);
+  }
+
+  getEscolas(): void {
+    this.escolaService.listar().subscribe(escola => this.escolas = escola);
   }
 
   goBack():void{

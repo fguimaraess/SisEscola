@@ -1,3 +1,5 @@
+import { TurmaFormComponent } from './turma-form/turma-form.component';
+import { EscolaFormComponent } from './escola-form/escola-form.component';
 import { TurmaDetailComponent } from './turma-detail/turma-detail.component';
 import { EscolaDetailComponent } from './escola-detail/escola-detail.component';
 import { HomeComponent } from './home/home.component';
@@ -13,8 +15,10 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'escola', component: EscolaComponent },
   { path: 'escola/:id', component: EscolaDetailComponent },
+  { path: 'add-escola', component: EscolaFormComponent },
   { path: 'turma', component: TurmaComponent },
-  { path: 'turma/:id', component: TurmaDetailComponent }
+  { path: 'turma/:id', component: TurmaDetailComponent },
+  { path: 'add-turma', component: TurmaFormComponent }
 ]
 
 @NgModule({

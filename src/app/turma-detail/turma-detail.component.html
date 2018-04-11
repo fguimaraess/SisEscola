@@ -1,24 +1,32 @@
 <div *ngIf="turma">
   <h2>Editar {{ turma.Nome | uppercase }}</h2>
-    <div><span>ID: </span>{{turma.ID}}</div>
-    <div class="row">
-      <div class="col-sm-12">
-        <label>Nome:
-          <input [(ngModel)]="turma.Nome" placeholder="Nome" class="form-control">
-        </label>
+  <div>
+    <span>ID: </span>{{turma.ID}}</div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input [(ngModel)]="turma.Nome" placeholder="Nome" id="nome" class="form-control">
       </div>
     </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <label>Escola:
-            <input [(ngModel)]="turma.IDEscola" placeholder="Endereco" class="form-control">
-        </label>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="form-group">
+        <label for="escola">Escola</label>
+        <select class="form-control" name="idescola" id="idescola" required [(ngModel)]="turma.IDEscola" #idescola="ngModel" (change)="getNumeroDeTurmas($event.target.value)">
+          <option *ngFor="let escola of escolas" [value]="escola.ID">{{ escola.Nome }}</option>
+        </select>
+        <div [hidden]="idescola.valid || idescola.pristine" class="alert alert-danger">
+          Escolha uma escola.
+        </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <button class="btn btn-success" (click)="save()">Salvar</button>
-        <button class="btn btn-default" (click)="goBack()">Voltar</button>
-      </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <button class="btn btn-success" (click)="save()">Salvar</button>
+      <button class="btn btn-default" (click)="goBack()">Voltar</button>
     </div>
+  </div>
 </div>

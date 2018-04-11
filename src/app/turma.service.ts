@@ -17,7 +17,7 @@ export class TurmaService {
  
   listar(): Observable<Turma[]>{
       return this.http.get<Turma[]>(`${this.turmaUrl}`).pipe(
-        tap(turma => console.log("Turmas")),
+        tap(turma => console.log("Turmas listadas com sucesso!")),
         catchError(this.handleError('Buscar Turmas', []))
       );
   }
@@ -33,7 +33,7 @@ export class TurmaService {
   addTurma(turma: Turma): Observable<Turma>{
     return this.http.post<Turma>(this.turmaUrl, turma, httpOptions)
     .pipe(
-      tap((turma: Turma) => alert(`Turma adicionada.`)),
+      tap((turma: Turma) => swal("",`Turma adicionada.`,"success")),
       catchError(this.handleError<Turma>('Adicionar Turma'))
     );
   }
@@ -42,7 +42,7 @@ export class TurmaService {
     const url = `${this.turmaUrl}/?id=${turma.ID}`;
     return this.http.put(url, turma, httpOptions)
     .pipe(
-      tap(_ => alert(`Turma atualizada.`)),
+      tap(_ => swal("",`Turma atualizada.`, "success")),
       catchError(this.handleError<any>('Atualizar Turma')),
     );
   }
@@ -53,7 +53,7 @@ export class TurmaService {
     
     return this.http.delete<Turma>(url, httpOptions)
       .pipe(
-          tap(_ => alert(`Escola excluída.`)),
+          tap(_ => swal("", `Escola excluída.`, "success")),
           catchError(this.handleError<Turma>('Excluir Escola'))
       );
   }
@@ -64,7 +64,7 @@ export class TurmaService {
       console.error(error); // log to console instead
       // TODO: better job of transforming error for user consumption
       console.log(`${operation} falhou: ${error.message}`);
-      alert(`${operation} falhou: ${error.message}`);
+      swal("", `${operation} falhou: ${error.message}`, "error");
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };

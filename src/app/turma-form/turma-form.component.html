@@ -1,0 +1,33 @@
+<div [hidden]="submitted">
+  <h1>Nova Turma</h1>
+  <form (ngSubmit)="onSubmit()" #turmaForm="ngForm">
+
+    <div class="form-group">
+      <label for="escola">Escola</label>
+      <select class="form-control" name="idescola" id="idescola" required [(ngModel)]="model.idescola" #idescola="ngModel" (change)="getNumeroDeTurmas($event.target.value)">
+        <option *ngFor="let escola of escolas" [value]="escola.ID">{{ escola.Nome }}</option>
+      </select>
+      <div [hidden]="idescola.valid || idescola.pristine" class="alert alert-danger">
+        Escolha uma escola.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Quantidade de Turmas</label>
+      <input type="text" disabled value="{{ qtdTurmas }}" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="nome">Nome</label>
+      <input type="text" class="form-control" id="nome" required [(ngModel)]="model.nome" name="nome" #nome="ngModel" placeholder="Nome da Turma">
+      <div [hidden]="nome.valid || nome.pristine" class="alert alert-danger">
+        Digite um nome.
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!turmaForm.form.valid">Adicionar</button>
+    <button type="button" class="btn btn-default" (click)="newTurma(); turmaForm.reset()">Limpar</button>
+
+    <button type="button" class="btn btn-default" (click)="goBack()">Voltar</button>
+  </form>
+</div>

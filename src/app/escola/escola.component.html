@@ -1,5 +1,6 @@
 <h2>Escolas</h2>
-<button class="btn btn-default" (click)="onAdd()">Adicionar</button>
+
+<a class="btn btn-default" routerLink="/add-escola">Adicionar</a>
 <table class="table table-hover">
   <thead>
     <tr>
@@ -12,13 +13,20 @@
   <tbody *ngFor="let e of escolas">
     <tr>
       <td>
-          <a routerLink="/escola/{{e.ID}}"><i class="fa fa-pencil fa-2"></i></a>
-          <a (click)="delete(e)"><i class="fa fa-minus-circle fa-2"></i></a>
+        <a routerLink="/escola/{{e.ID}}">
+          <i class="fa fa-pencil fa-2x"></i>
+        </a>
+        <a (click)="delete(e)" style="cursor: pointer;">
+          <i class="fa fa-minus-circle fa-2x"></i>
+        </a>
       </td>
       <td>{{ e.Nome }}</td>
       <td>{{ e.Endereco }}</td>
-      <td><span *ngFor="let t of e.Turma">{{ t.Nome }}<br/></span></td>
+      <td>
+        <span *ngFor="let t of e.Turma">{{ t.Nome }}
+          <br/>
+        </span>
+      </td>
     </tr>
   </tbody>
 </table>
-
