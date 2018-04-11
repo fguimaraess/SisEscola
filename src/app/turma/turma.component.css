@@ -6,3 +6,10 @@ a:hover{
     color: #6D1C21;
 }
 
+#turmas {
+    background-color: white !important;
+}
+
+#addTurma{
+    margin-left: 1%;
+}

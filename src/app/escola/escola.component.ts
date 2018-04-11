@@ -13,11 +13,14 @@ export class EscolaComponent implements OnInit {
   
   escolas: Array<Escola>;
   selectedEscola: Escola;
+  verMaisEscola: Escola;
+  esconder: boolean;
 
   constructor(private escolaService: EscolaService) { }
   
   ngOnInit() {
     this.listar();
+    this.esconder = false;
   }
 
   onSelect(_escola: Escola): void{
@@ -26,7 +29,15 @@ export class EscolaComponent implements OnInit {
 
   listar(): void{
     this.escolaService.listar().subscribe(dados => this.escolas = dados);
-    
+  }
+
+  esconderVerMais(): void{
+    this.esconder = true;
+  }
+
+  verMais(e: Escola): void{
+    this.esconder = false;
+    this.verMaisEscola = e;
   }
 
   delete(escola: Escola): void{

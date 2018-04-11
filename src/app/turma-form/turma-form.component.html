@@ -1,24 +1,31 @@
-<div [hidden]="submitted">
+<div [hidden]="submitted" id="turma">
   <h1>Nova Turma</h1>
   <form (ngSubmit)="onSubmit()" #turmaForm="ngForm">
-
-    <div class="form-group">
-      <label for="escola">Escola</label>
-      <select class="form-control" name="idescola" id="idescola" required [(ngModel)]="model.idescola"
-      #idescola="ngModel" (change)="getNumeroDeTurmas($event.target.value)">
-        <option *ngFor="let escola of escolas" [value]="escola.ID">{{ escola.Nome }}</option>
-      </select>
-      <div [hidden]="idescola.valid || idescola.pristine" class="alert alert-danger">
-        Escolha uma escola.
-      </div>
+    <div class="row">
+      <div class="col-xs-8 col-md-8">
+          <div class="form-group">
+            <label for="escola">Escola</label>
+            <select class="form-control" name="idescola" id="idescola" required [(ngModel)]="model.idescola"
+            #idescola="ngModel" (change)="getNumeroDeTurmas($event.target.value)">
+              <option *ngFor="let escola of escolas" [value]="escola.ID">{{ escola.Nome }}</option>
+            </select>
+            <div [hidden]="idescola.valid || idescola.pristine" class="alert alert-danger">
+              Escolha uma escola.
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-4 col-md-4">
+            <div [hidden]="qtdTurmas == undefined">
+              <div class="form-group">
+                <label>Quantidade de Turmas</label>
+                <span id="quantidade-turmas">{{ qtdTurmas }}</span>
+              </div>
+            </div>
+        </div>
     </div>
+    
 
-    <div [hidden]="qtdTurmas == undefined">
-      <div class="form-group">
-        <label>Quantidade de Turmas</label>
-        <div id="quantidade-turmas">{{ qtdTurmas }}</div>
-      </div>
-    </div>
+    
 
     <div class="form-group">
       <label for="nome">Nome</label>

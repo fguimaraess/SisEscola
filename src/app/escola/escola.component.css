@@ -5,3 +5,26 @@ a:hover{
 .fa-minus-circle {
     color: #6D1C21;
 }
+
+#escolas {
+    background-color: white !important;
+}
+
+#addEscola{
+    margin-left: 1%;
+}
+
+#buscaTurma {
+    padding: 0% 5%;
+    cursor: pointer;
+    color: #337ab7;
+}
+
+#verMaisEscola {
+    text-align: center;
+    border: 5px solid lightsteelblue;
+}
+
+#esconderVerMais {
+    cursor: pointer;
+}

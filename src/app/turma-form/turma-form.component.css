@@ -1,8 +1,14 @@
 #quantidade-turmas {
     border: 2px solid;
     border-radius: 10px;
-    width: 5%;
+    width: 50%;
     text-align: center;
     border-color: lightsteelblue;
     background-color: lightsteelblue;
+    display: block;
+}
+
+#turma {
+    background-color: white !important;
+    padding: 0% 1% 1% 1%;
 }
