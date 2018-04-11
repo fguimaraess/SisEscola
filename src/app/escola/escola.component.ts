@@ -20,7 +20,7 @@ export class EscolaComponent implements OnInit {
   
   ngOnInit() {
     this.listar();
-    this.esconder = false;
+    this.esconder = true;
   }
 
   onSelect(_escola: Escola): void{
@@ -31,12 +31,12 @@ export class EscolaComponent implements OnInit {
     this.escolaService.listar().subscribe(dados => this.escolas = dados);
   }
 
-  esconderVerMais(): void{
-    this.esconder = true;
-  }
-
   verMais(e: Escola): void{
-    this.esconder = false;
+    if(this.esconder){
+      this.esconder = false;
+    } else {
+      this.esconder = true;
+    }
     this.verMaisEscola = e;
   }
 
