@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+.btn-success {
+    background-color: #5cb85c !important;
+    border-left-color: #5cb85c !important;
+    border-right-color: #5cb85c !important;
+}
+.swal2-modal{
+    font-size: 12pt !important;
+}
+
+.btn-danger {
+    color: #fff !important;
+    background-color: #d9534f !important;
+    border-color: #d43f3a !important;
+}

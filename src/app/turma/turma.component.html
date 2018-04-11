@@ -8,18 +8,18 @@
       <th>Escola</th>
     </tr>
   </thead>
-  <tbody *ngFor="let t of turma">
+  <tbody *ngFor="let turma of turmas">
     <tr>
       <td>
-        <a routerLink="/turma/{{t.ID}}">
+        <a routerLink="/turma/{{turma.ID}}" title="Editar">
           <i class="fa fa-pencil fa-2x"></i>
         </a>
-        <a (click)="delete(t)" style="cursor: pointer;">
+        <a (click)="delete(turma)" style="cursor: pointer;" title="Excluir">
           <i class="fa fa-minus-circle fa-2x"></i>
         </a>
       </td>
-      <td>{{ t.Nome }}</td>
-      <td>{{ t.Escola.Nome }}</td>
+      <td>{{ turma.Nome }}</td>
+      <td>{{ turma.Escola.Nome }}</td>
     </tr>
   </tbody>
 </table>
