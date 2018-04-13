@@ -23,16 +23,18 @@
       </td>
       <td>{{ e.Nome }}</td>
       <td>{{ e.Endereco }}</td>
-      <td (click)="verMais(e)" title="Detalhes"><i class="fa fa-search-plus fa-2x" id="buscaTurma"></i>
-        
+      <td (click)="verMais(e)" title="Detalhes">
+        <i class="fa fa-search-plus fa-2x" id="buscaTurma"></i>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4" *ngIf="verMaisEscola && verMaisEscola.ID == e.ID" id="verMaisEscola" [hidden]="esconder">
+        <p>Turmas: 
+          <span *ngFor="let e of verMaisEscola.Turma"><br /><b>{{ e.Nome }}</b></span>
+          <span *ngIf="verMaisEscola.Turma.length == 0">Não existem turmas cadastradas para esta escola.</span>
+        </p>
       </td>
     </tr>
   </tbody>
 </table>
-  <div *ngIf="verMaisEscola" id="verMaisEscola" [hidden]="esconder">
-    <p>Escola: <b>{{ verMaisEscola.Nome }}</b></p>
-    <p>Turmas: 
-    <span *ngFor="let e of verMaisEscola.Turma"><br /><b>{{ e.Nome }}</b></span>
-    </p>
-  </div>
 </div>

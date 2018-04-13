@@ -20,7 +20,7 @@ export class EscolaComponent implements OnInit {
   
   ngOnInit() {
     this.listar();
-    this.esconder = true;
+      this.esconder = true;
   }
 
   onSelect(_escola: Escola): void{
@@ -37,6 +37,7 @@ export class EscolaComponent implements OnInit {
     } else {
       this.esconder = true;
     }
+    
     this.verMaisEscola = e;
   }
 
