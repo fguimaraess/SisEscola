@@ -1,27 +1,34 @@
 <div id="turmas">
-<h2 style="text-align: center;">Turmas</h2>
-<a class="btn btn-default" routerLink="/add-turma" id="addTurma">Adicionar</a>
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Ações</th>
-      <th>Nome</th>
-      <th>Escola</th>
-    </tr>
-  </thead>
-  <tbody *ngFor="let turma of turmas">
-    <tr>
-      <td>
-        <a routerLink="/turma/{{turma.ID}}" title="Editar">
-          <i class="fa fa-pencil fa-2x"></i>
-        </a>
-        <a (click)="delete(turma)" style="cursor: pointer;" title="Excluir">
-          <i class="fa fa-minus-circle fa-2x"></i>
-        </a>
-      </td>
-      <td>{{ turma.Nome }}</td>
-      <td>{{ turma.Escola.Nome }}</td>
-    </tr>
-  </tbody>
-</table>
+  <h2 style="text-align: center;">Turmas</h2>
+  <div class="row">
+    <div class="col-xs-8 col-sm-8">
+      <a class="btn btn-default" routerLink="/add-turma" id="addTurma">Adicionar</a>
+    </div>
+    <div class="col-xs-4 col-sm-4" align="right">
+      <input type="text" name="search" [(ngModel)]="filter" placeholder="Pesquisar" class="form-control" />
+    </div>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Ações</th>
+        <th>Nome</th>
+        <th>Escola</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let turma of turmas | filter:filter; let i = index">
+      <tr>
+        <td>
+          <a routerLink="/turma/{{turma.ID}}" title="Editar">
+            <i class="fa fa-pencil fa-2x"></i>
+          </a>
+          <a (click)="delete(turma)" style="cursor: pointer;" title="Excluir">
+            <i class="fa fa-minus-circle fa-2x"></i>
+          </a>
+        </td>
+        <td>{{ turma.Nome }}</td>
+        <td>{{ turma.Escola.Nome }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

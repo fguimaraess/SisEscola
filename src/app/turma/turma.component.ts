@@ -22,16 +22,16 @@ export class TurmaComponent implements OnInit {
     this.listar();
   }
 
-  listar(){
+  listar() {
     this.turmaService.listar().subscribe(dados => this.turmas = dados);
     this.escolaService.listar().subscribe(dados => this.escola = dados);
   }
 
-  onSelect(_turma: Turma): void{
+  onSelect(_turma: Turma): void {
     this.selectedTurma = _turma;
   }
 
-  delete(turma: Turma): void{
+  delete(turma: Turma): void {
     let that = this;
     swal({
       title: "",
@@ -43,8 +43,8 @@ export class TurmaComponent implements OnInit {
       cancelButtonText: "Cancelar",
       cancelButtonClass: 'btn btn-danger'
     }).then((result) => {
-      if(result.value){
-        that.turmas = this.turmas.filter( x => x !== turma);
+      if (result.value) {
+        that.turmas = this.turmas.filter(x => x !== turma);
         that.turmaService.deleteTurma(turma).subscribe();
       }
     }).catch(swal.noop)

@@ -17,10 +17,10 @@ export class EscolaComponent implements OnInit {
   esconder: boolean;
 
   constructor(private escolaService: EscolaService) { }
-  
+
   ngOnInit() {
     this.listar();
-      this.esconder = true;
+    this.esconder = true;
   }
 
   onSelect(_escola: Escola): void{

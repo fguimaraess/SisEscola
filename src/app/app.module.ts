@@ -15,6 +15,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { EscolaFormComponent } from './escola-form/escola-form.component';
 import { TurmaFormComponent } from './turma-form/turma-form.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -25,14 +26,15 @@ import { TurmaFormComponent } from './turma-form/turma-form.component';
     TurmaDetailComponent,
     HomeComponent,
     EscolaFormComponent,
-    TurmaFormComponent,
+    TurmaFormComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    Ng2SearchPipeModule
   ],
   providers: [ EscolaService, TurmaService ],
   bootstrap: [AppComponent]

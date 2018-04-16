@@ -1,40 +1,50 @@
 <div id="escolas">
   <h2 style="text-align: center;">Escolas</h2>
 
-<a class="btn btn-default" routerLink="/add-escola" id="addEscola">Adicionar</a>
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Ações</th>
-      <th>Nome</th>
-      <th>Endereço</th>
-      <th>Turmas</th>
-    </tr>
-  </thead>
-  <tbody *ngFor="let e of escolas">
-    <tr>
-      <td>
-        <a routerLink="/escola/{{e.ID}}" title="Editar">
-          <i class="fa fa-pencil fa-2x"></i>
-        </a>
-        <a (click)="delete(e)" style="cursor: pointer;" title="Excluir">
-          <i class="fa fa-minus-circle fa-2x"></i>
-        </a>
-      </td>
-      <td>{{ e.Nome }}</td>
-      <td>{{ e.Endereco }}</td>
-      <td (click)="verMais(e)" title="Detalhes">
-        <i class="fa fa-search-plus fa-2x" id="buscaTurma"></i>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="4" *ngIf="verMaisEscola && verMaisEscola.ID == e.ID" id="verMaisEscola" [hidden]="esconder">
-        <p>Turmas: 
-          <span *ngFor="let e of verMaisEscola.Turma"><br /><b>{{ e.Nome }}</b></span>
-          <span *ngIf="verMaisEscola.Turma.length == 0">Não existem turmas cadastradas para esta escola.</span>
-        </p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+  <div class="row">
+    <div class="col-xs-8 col-sm-8">
+      <a class="btn btn-default" routerLink="/add-escola" id="addEscola">Adicionar</a>
+    </div>
+    <div class="col-xs-4 col-sm-4" align="right">
+      <input type="text" name="search" [(ngModel)]="filter" placeholder="Pesquisar" class="form-control" />
+    </div>
+  </div>
+  <table class="table table-hover" id="table">
+    <thead>
+      <tr>
+        <th>Ações</th>
+        <th>Nome</th>
+        <th>Endereço</th>
+        <th>Turmas</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let e of escolas | filter:filter;">
+      <tr>
+        <td>
+          <a routerLink="/escola/{{e.ID}}" title="Editar">
+            <i class="fa fa-pencil fa-2x"></i>
+          </a>
+          <a (click)="delete(e)" style="cursor: pointer;" title="Excluir">
+            <i class="fa fa-minus-circle fa-2x"></i>
+          </a>
+        </td>
+        <td>{{ e.Nome }}</td>
+        <td>{{ e.Endereco }}</td>
+        <td (click)="verMais(e)" title="Detalhes">
+          <i class="fa fa-search-plus fa-2x" id="buscaTurma"></i>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4" *ngIf="verMaisEscola && verMaisEscola.ID == e.ID" id="verMaisEscola" [hidden]="esconder">
+          <p>Turmas:
+            <span *ngFor="let e of verMaisEscola.Turma">
+              <br />
+              <b>{{ e.Nome }}</b>
+            </span>
+            <span *ngIf="verMaisEscola.Turma.length == 0">Não existem turmas cadastradas para esta escola.</span>
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
